@@ -25,3 +25,11 @@ and use it inside your project like:
       <artifactId>spring-cdi-bridge</artifactId>
       <version>1.0.0-SNAPSHOT</version>
     </dependency>
+
+
+To use this class you need to configure it within the Spring Context, like
+<context:component-scan
+   scope-resolver="net.wessendorf.spring.scopes.CdiScopeMetadataResolver"
+   base-package="my.packages..." />
+
+
