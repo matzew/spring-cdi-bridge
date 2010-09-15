@@ -1,0 +1,27 @@
+A simple bridge that allows the Spring 3.x framework to resolve scope annotations offered by the JSR-299. With this module a Spring bean can be declared in a 100% JavaEE compliant way, since Spring already support the JSR-330.
+
+Now the Spring beans can be defined like:
+
+...
+@javax.inject.Named("mySpringBean")
+@javax.enterprise.context.RequestScoped
+public class MySpringBeanController
+{
+
+  // java code ...
+  ...
+
+}
+
+
+Build the single JAR with:
+
+mvn (clean) install
+
+and use it inside your project like:
+
+    <dependency>
+      <groupId>net.wessendorf.spring.scopes</groupId>
+      <artifactId>spring-cdi-bridge</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
